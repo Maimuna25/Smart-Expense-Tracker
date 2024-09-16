@@ -7,6 +7,7 @@ import os
 # Path to the expense CSV file
 EXPENSE_FILE = 'data/expenses.csv'
 
+
 def load_and_prepare_data(expense_file):
     # Check if the expense file exists
     if not os.path.exists(expense_file):
@@ -29,6 +30,7 @@ def load_and_prepare_data(expense_file):
 
     return X, y
 
+
 def train_and_predict(X, y):
     # Split the data into train and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
@@ -45,9 +47,10 @@ def train_and_predict(X, y):
     plt.plot(X_test, y_pred, color='red', label='Predicted')
     plt.xlabel('Date')
     plt.ylabel('Amount Spent')
-    plt.title('Expense Prediction Over Time')
+    plt.title('Actual vs Predicted Expenses')
     plt.legend()
     plt.show()
+
 
 def run_prediction():
     # Load the data
@@ -59,4 +62,5 @@ def run_prediction():
 
     # Train the model and predict
     train_and_predict(X, y)
+
 

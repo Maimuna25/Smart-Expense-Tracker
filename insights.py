@@ -23,7 +23,7 @@ def expense_insights():
     print(category_spent)
 
     # 3. Plotting Spending Trends (Daily)
-    date_format = "%d-%m-%Y"  # Update this format to match your date format
+    date_format = "%d-%m-%Y"
     expenses['Date'] = pd.to_datetime(expenses['Date'], format=date_format, dayfirst=True)
     daily_spending = expenses.groupby('Date')['Amount'].sum()
 
