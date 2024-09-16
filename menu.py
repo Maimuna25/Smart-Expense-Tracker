@@ -1,5 +1,6 @@
-from expense_tracker import add_expense, view_expenses
+from expense_tracker import add_expenses, view_expenses
 from insights import expense_insights
+
 
 def menu():
     while True:
@@ -12,7 +13,7 @@ def menu():
         choice = input("Enter your choice: ")
 
         if choice == '1':
-            add_expense()
+            add_expenses()
         elif choice == '2':
             view_expenses()
         elif choice == '3':
@@ -22,3 +23,6 @@ def menu():
             break
         else:
             print("Invalid choice. Please try again.")
+
+
+menu()

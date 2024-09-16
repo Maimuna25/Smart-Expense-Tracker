@@ -3,7 +3,8 @@ import os
 
 EXPENSE_FILE = 'data/expenses.csv'
 
-def add_expense():
+
+def add_expenses():
     # Get user input
     date = input("Enter the date (YYYY-MM-DD): ")
     category = input("Enter the category (Food, Transport, Entertainment, etc.): ")
@@ -26,6 +27,7 @@ def add_expense():
 
     print("Expense added successfully!")
 
+
 def view_expenses():
     # Check if file exists
     if os.path.exists(EXPENSE_FILE):
@@ -34,5 +36,3 @@ def view_expenses():
     else:
         print("No expenses recorded yet.")
 
-
-view_expenses()

@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 EXPENSE_FILE = 'data/expenses.csv'
 
+
 def expense_insights():
     if not os.path.exists(EXPENSE_FILE):
         print("No expenses recorded yet.")
@@ -22,7 +23,8 @@ def expense_insights():
     print(category_spent)
 
     # 3. Plotting Spending Trends (Daily)
-    expenses['Date'] = pd.to_datetime(expenses['Date'])
+    date_format = "%d-%m-%Y"  # Update this format to match your date format
+    expenses['Date'] = pd.to_datetime(expenses['Date'], format=date_format, dayfirst=True)
     daily_spending = expenses.groupby('Date')['Amount'].sum()
 
     plt.figure(figsize=(10, 5))
@@ -33,5 +35,4 @@ def expense_insights():
     plt.grid(True)
     plt.show()
 
-# Call the function
-expense_insights()
+
